@@ -1,0 +1,4 @@
+#!/bin/bash
+
+[[ $1 == "fast" ]] && ionice -c 3 nice -n 15 emerge -uDkv --changed-use --keep-going --with-bdeps=n --changed-deps --binpkg-changed-deps=y --backtrack=100 world
+[[ $1 == "fast" ]] || ionice -c 3 nice -n 15 emerge -auDkv --changed-use --keep-going --with-bdeps=n --changed-deps --binpkg-changed-deps=y --backtrack=100 world

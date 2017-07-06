@@ -1,0 +1,11 @@
+[Unit]
+Description=Emerge sync daily timer
+
+[Timer]
+OnCalendar= *-*-* 01:00:00
+AccuracySec=4h
+Unit=emergesync.service
+Persistent=true
+
+[Install]
+WantedBy=basic.target

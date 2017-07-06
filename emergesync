@@ -1,0 +1,8 @@
+#!/bin/sh
+#Sync portage
+
+ionice -n 7 nice -n 20 emerge --sync
+ionice -n 7 nice -n 20 layman -S 
+emerge -puDv --changed-deps --with-bdeps=n --changed-use --backtrack=100 world | col -bx | mutt -s "world update" rich@localhost
+/usr/local/sbin/buildupdates 
+eix-update 

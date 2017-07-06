@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily emerge sync and build
+
+[Service]
+Nice=19
+IOSchedulingClass=3
+IOSchedulingPriority=7
+Environment="HOME=/root/"
+ExecStart=/etc/timer-scripts/emergesync
+PrivateTmp=true
