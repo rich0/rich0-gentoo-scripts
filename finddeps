@@ -1,0 +1,2 @@
+#!/bin/bash
+qlist ${1} | xargs scanelf -L -n -q -F '%n #F' | tr , ' ' | xargs qfile -C | sort -u
